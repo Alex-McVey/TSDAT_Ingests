@@ -6,3 +6,6 @@ matplotlib
 act-atmos
 parse
 typer
+nptdms
+mhkit
+pytest

@@ -2,7 +2,7 @@
     "autoDocstring.customTemplatePath": ".vscode/docstring.mustache",
     "editor.formatOnSave": true,
     "python.envFile": "${workspaceFolder}/.vscode/.env",
-    "python.formatting.provider": "black",
+    "python.formatting.provider": "autopep8",
     "python.linting.flake8Args": [
         "--exclude",
         "templates/**"
