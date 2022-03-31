@@ -503,13 +503,11 @@ quality_management:
       # variables
       - DATA_VARS
 
-    #exclude:
-
-  # TODO – Developer: Update this as needed.
-  manage_custom_qc: # Rename this
+  mhkit_qc_demo: # Rename this
     checker:
-      classname: ingest.yostimu_unh.pipeline.qc.CustomQualityChecker
+      classname: ingest.yostimu_unh.pipeline.qc.StagnantDataChecker
     handlers:
-      - classname: ingest.yostimu_unh.pipeline.qc.CustomQualityHandler
+      - classname: ingest.yostimu_unh.pipeline.qc.StagnantDataHandler
     variables:
       - DATA_VARS
+    exclude: [checksum]
