@@ -67,7 +67,7 @@ class Pipeline(IngestPipeline):
                 ax.set_title("")  # Remove bogus title created by xarray
                 ax.legend(ncol=1)  # , bbox_to_anchor=(1, -0.05)
                 ax.set_ylabel("Acceleration (m/s^2)")
-                ax.set_xlabel("Time (UTC)")
+                ax.set_xlabel("Time (EST)")
                 # format_time_xticks(ax)
                 fig.savefig(tmp_path)
                 self.storage.save(tmp_path)

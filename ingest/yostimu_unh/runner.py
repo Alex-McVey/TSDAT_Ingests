@@ -7,5 +7,4 @@ if __name__ == "__main__":
         expand("config/pipeline_config_yostimu_unh.yml", __file__),
         expand("config/storage_config_yostimu_unh.yml", __file__),
     )
-    pipeline.run(expand(
-        "C://Projects/TSDAT_Projects/UNH_MODAQ/sample_files/UNH_IMU_LoadCell_Data/2021_11_1_19_0_YostIMU.tdms", __file__))
+    pipeline.run(expand("tests/data/input/2021_11_1_19_0_YostIMU.tdms", __file__))

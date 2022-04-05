@@ -17,7 +17,8 @@ class StagnantDataChecker(QualityChecker):
         data_to_pd = self.ds[variable_name].to_dataframe()
 
         # Define expected lower bound (no upper bound is specified in this example)
-        expected_bound = [0.001, None]
+        expected_bound = [(data_to_pd.max().values[0] -
+                           data_to_pd.min().values[0]) / 100, None]
 
         # Define the moving window, in seconds
         sample_rate = data_to_pd.index.values[0:2]
@@ -28,7 +29,7 @@ class StagnantDataChecker(QualityChecker):
         results_array = ~results['mask']
         results_array = results_array.to_numpy()
 
-        return results_array
+        return results_array.ravel()
 
 
 class StagnantDataHandler(QualityHandler):

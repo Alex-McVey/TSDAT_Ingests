@@ -1,0 +1,17 @@
+storage:
+  classname: ${STORAGE_CLASSNAME}
+  parameters:
+    retain_input_files: ${RETAIN_INPUT_FILES}
+    root_dir: ${ROOT_DIR}
+    bucket_name: ${STORAGE_BUCKET}
+
+  file_handlers:
+    input:
+      my_custom_format:
+        file_pattern: ".*LoadCells.tdms"
+        classname: ingest.loadcells_unh.pipeline.filehandler.tdms_FileHandler
+
+    output:
+      netcdf:
+        file_extension: ".nc"
+        classname: tsdat.io.filehandlers.NetCdfHandler
