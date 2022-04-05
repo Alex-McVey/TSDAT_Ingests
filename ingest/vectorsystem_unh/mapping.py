@@ -9,18 +9,18 @@ from . import Pipeline
 # match the directory structure in addition to (or instead of) the file basename.
 mapping: Dict["AnyStr@compile", IngestSpec] = {
     # Mapping for Raw Data -> Ingest
-    re.compile(r".*YostIMU.tdms"): IngestSpec(
+    re.compile(r".*VectorSystemData..tdms"): IngestSpec(
         pipeline=Pipeline,
-        pipeline_config=expand("config/pipeline_config_yostimu_unh.yml", __file__),
-        storage_config=expand("config/storage_config_yostimu_unh.yml", __file__),
-        name="yostimu_unh",
+        pipeline_config=expand("config/pipeline_config_vectorsystem_unh.yml", __file__),
+        storage_config=expand("config/storage_config_vectorsystem_unh.yml", __file__),
+        name="vectorsystem_unh",
     ),
     # Mapping for Processed Data -> Ingest (so we can reprocess plots)
-    re.compile(r".*accel_data.png"): IngestSpec(
+    re.compile(r".*water_temp.png"): IngestSpec(
         pipeline=Pipeline,
-        pipeline_config=expand("config/pipeline_config_yostimu_unh.yml", __file__),
-        storage_config=expand("config/storage_config_yostimu_unh.yml", __file__),
-        name="plot_yostimu_unh",
+        pipeline_config=expand("config/pipeline_config_vectorsystem_unh.yml", __file__),
+        storage_config=expand("config/storage_config_vectorsystem_unh.yml", __file__),
+        name="plot_vectorsystem_unh",
     ),
     # You can add as many {regex: IngestSpec} entries as you would like. This is useful
     # if you would like to reuse this ingest at other locations or possibly for other

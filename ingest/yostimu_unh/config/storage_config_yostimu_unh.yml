@@ -41,21 +41,6 @@ storage:
         #   read:
         #     some_custom_option: True
 
-      # csv:
-      #   # Here we define single FileHandler for reading input data. The FileHandler is
-      #   # configured to run for files ending in '.csv' and uses the built-in
-      #   # CsvHandler from the tsdat.io.filehandlers module with some specific parameters
-      #   # that help us read data from our example csv file.
-      #   file_pattern: '.*\.csv'
-      #   classname: tsdat.io.filehandlers.CsvHandler
-      #   parameters:
-      #     read:
-      #       # You can add parameters that are passed to pandas.read_csv() as keyword
-      #       # arguments. See the pandas.read_csv() docs for more details.
-      #       read_csv:
-      #         index_col: False # Treat the first column (time) as a data variable
-      #         header: 2 # Where to look for the header (header = line number - 1)
-
     output:
       # We highly recommend writing to the netcdf format whenever possible, as this format
       # preserves the data structure and metadata as configured in the pipeline config

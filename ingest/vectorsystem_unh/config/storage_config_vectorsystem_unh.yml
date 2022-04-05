@@ -1,0 +1,21 @@
+storage:
+  # This section should not be modified unless there is a strong need. It is set up to
+  # use environment variables to set the settings. These variables are automatically set
+  # by the various entry points to this ingest and should not be modified unless you
+  # know what you are doing.
+  classname: ${STORAGE_CLASSNAME}
+  parameters:
+    retain_input_files: ${RETAIN_INPUT_FILES}
+    root_dir: ${ROOT_DIR}
+    bucket_name: ${STORAGE_BUCKET}
+
+  file_handlers:
+    input:
+      my_custom_format:
+        file_pattern: ".*VectorSystemData..tdms"
+        classname: ingest.vectorsystem_unh.pipeline.filehandler.tdms_FileHandler
+
+    output:
+      netcdf:
+        file_extension: ".nc"
+        classname: tsdat.io.filehandlers.NetCdfHandler

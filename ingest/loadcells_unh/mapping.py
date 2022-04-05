@@ -14,7 +14,7 @@ mapping: Dict["AnyStr@compile", IngestSpec] = {
         name="loadcells_unh",
     ),
     # Mapping for Processed Data -> Ingest (so we can reprocess plots)
-    re.compile(r".*LoadCells.tdms"): IngestSpec(
+    re.compile(r".*load_cell0.png"): IngestSpec(
         pipeline=Pipeline,
         pipeline_config=expand("config/pipeline_config_loadcells_unh.yml", __file__),
         storage_config=expand("config/storage_config_loadcells_unh.yml", __file__),
